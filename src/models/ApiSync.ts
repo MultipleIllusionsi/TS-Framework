@@ -6,6 +6,7 @@ interface HasId {
 
 export class ApiSync<T extends HasId> {
   constructor(public rootUrl: string) {}
+
   fetch(id: number): AxiosPromise {
     return axios.get(`${this.rootUrl}/${id}`);
   }
